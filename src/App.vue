@@ -11,7 +11,22 @@
       </template>
     </ModalComponent>
   </div>
+  <div v-if="showSecondModal">
+    <ModalComponent :theme="theme" @close="toggleSecondModal">
+      <h1>Second Modal</h1>
+      <p>This is the second modal</p>
+      <template v-slot:text>
+        <button>Lorem ipsum dolor sit.</button>
+        <button>Lorem ipsum dolor sit amet.</button>
+      </template>
+    </ModalComponent>
+  </div>
   <button @click.alt="handleModalDisplay">Show Modal (left click + alt)</button>
+  <button @click="toggleSecondModal">Show second Modal</button>
+
+  <!-- <teleport to=".modal" >
+    <h1>This is teleported</h1>
+  </teleport> -->
   <!-- <SlotComponent>
     <h1>This is a slot component</h1>
     <template v-slot:links>
@@ -36,6 +51,7 @@ export default {
       theme: "sale",
       showModal: false,
       message: "How are you doing modal",
+      showSecondModal: false,
     };
   },
   methods: {
@@ -46,6 +62,9 @@ export default {
     // },
     handleModalDisplay() {
       this.showModal = !this.showModal;
+    },
+    toggleSecondModal() {
+      this.showSecondModal = !this.showSecondModal;
     },
   },
 };

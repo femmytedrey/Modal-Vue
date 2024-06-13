@@ -5,13 +5,16 @@
       <div class="actions">
         <slot name= 'social'></slot>
       </div>
+      <div class="actions">
+        <slot name='text'></slot>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["theme", "showModal"],
+  props: ["theme"],
   methods: {
     closeModal() {
       this.$emit("close");
@@ -20,7 +23,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 .backdrop {
   top: 0;
   position: fixed;
@@ -45,10 +48,10 @@ export default {
     margin: 30px 0 10 px;
     color: #333;
 }
-a {
+.modal .actions a {
     color: #333;
     padding: 8px;
-    border: 1 solid #eee;
+    border: 1px solid #eee;
     border-radius: 4px;
     text-decoration: none;
     margin: 10px;
@@ -59,5 +62,11 @@ a {
 }
 .modal.sale h1 {
   color: white;
+}
+.modal.sale .actions {
+    color:white;
+}
+.modal.sale .actions a {
+    color:white;
 }
 </style>
