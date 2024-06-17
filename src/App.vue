@@ -17,7 +17,7 @@
       <p>This is the second modal</p>
       <template v-slot:text>
         <button>Lorem ipsum dolor sit.</button>
-        <button>Lorem ipsum dolor sit amet.</button>
+        <button>Lorem ipsum dolor sit amets.</button>
       </template>
     </ModalComponent>
   </div>
